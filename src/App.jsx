@@ -2,6 +2,7 @@ import "./App.css";
 import FinalComponent from "./FinalComponent";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "./Error";
+import { Navbar } from "./Navbar";
 function App() {
   return (
     <>
@@ -21,11 +22,3 @@ function App() {
 }
 
 export default App;
-
-function Navbar({ title = "Navbar" }) {
-  return (
-    <nav className="Navbar">
-      <p>{title}</p>
-    </nav>
-  );
-}
