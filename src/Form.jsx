@@ -16,7 +16,6 @@ export function Form({ data, setData }) {
             // const jsonResponse = await response.json();
             const jsonResponse = await axios.get(url);
             setData(jsonResponse.data);
-            console.log(jsonResponse.data);
           } catch (e) {
             console.log(e);
           }
