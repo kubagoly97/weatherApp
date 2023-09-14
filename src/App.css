@@ -102,7 +102,6 @@ html {
   font-size: 40px;
 }
 .DescriptionBox {
-  border: 0.7px solid white;
   background: rgba(255, 255, 255, 0.195);
   border-radius: 5px;
   margin: 40px auto;
@@ -126,7 +125,6 @@ html {
   text-shadow: 10px 10px 10px black;
 }
 .WhiteBox {
-  border: 0.3px solid rgba(255, 255, 255, 0.572);
   width: 80%;
   margin-left: 10%;
   border-radius: 5px;

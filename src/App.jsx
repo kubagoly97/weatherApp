@@ -2,7 +2,6 @@ import "./App.css";
 import FinalComponent from "./FinalComponent";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "./Error";
-import { Navbar } from "./Navbar";
 function App() {
   return (
     <>

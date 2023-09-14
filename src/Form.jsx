@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "./Button";
 export function Form({ data, setData }) {
@@ -11,10 +12,11 @@ export function Form({ data, setData }) {
             import.meta.env.VITE_API_KEY
           }&q=${data.city}&aqi=no`;
           try {
-            const response = await fetch(url);
-            const jsonResponse = await response.json();
-            setData(jsonResponse);
-            console.log(jsonResponse);
+            // const response = await fetch(url);
+            // const jsonResponse = await response.json();
+            const jsonResponse = await axios.get(url);
+            setData(jsonResponse.data);
+            console.log(jsonResponse.data);
           } catch (e) {
             console.log(e);
           }
