@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { WeatherElement } from "./WeatherElement";
 import { Button } from "./Button";
+
 export function WeatherList({ data }) {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(function () {
+    const storedValue = localStorage.getItem("list");
+    return JSON.parse(storedValue);
+  });
   const addWeatherToTheList = () => {
     if (list.map((l) => l.data.location.name).includes(data.location.name)) {
       return;
@@ -11,6 +15,13 @@ export function WeatherList({ data }) {
       setList([...list, { data, id: uuidv4() }]);
     }
   };
+
+  useEffect(
+    function () {
+      localStorage.setItem("list", JSON.stringify(list));
+    },
+    [list]
+  );
   return (
     <>
       {" "}
