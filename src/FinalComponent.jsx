@@ -12,7 +12,7 @@ export default function FinalComponent() {
         fallback={
           <>
             <Component data={data} setData={setData} />
-            <WeatherList data={data} />
+            <WeatherList data={data} setData={setData} />
             <Error />
           </>
         }

@@ -1,6 +1,15 @@
-import { useState } from "react";
-export function WeatherElement({ index, data, setList, list, id }) {
+import { useEffect, useState } from "react";
+export function WeatherElement({
+  index,
+  data,
+  setList,
+  list,
+  id,
+  handleRefreshData,
+  fetchNewData,
+}) {
   const [showMore, setShowMore] = useState(false);
+
   return (
     <div
       onClick={() => setShowMore(!showMore)}
@@ -16,6 +25,7 @@ export function WeatherElement({ index, data, setList, list, id }) {
         (data.current.condition.text === "Overcast" && "OverCast")
       }`}
     >
+      <button onClick={() => fetchNewData(id)}>Refresh</button>
       <button
         style={{
           backgroundColor: "rgba(255, 0, 0, 0.382)",

@@ -12,8 +12,6 @@ export function Form({ data, setData }) {
             import.meta.env.VITE_API_KEY
           }&q=${data.city}&aqi=no`;
           try {
-            // const response = await fetch(url);
-            // const jsonResponse = await response.json();
             const jsonResponse = await axios.get(url);
             setData(jsonResponse.data);
           } catch (e) {
