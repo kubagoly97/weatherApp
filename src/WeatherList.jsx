@@ -6,17 +6,14 @@ import { Button } from "./Button";
 export function WeatherList({ data, setData }) {
   const [list, setList] = useState(function () {
     const storedValue = localStorage.getItem("list");
-    return JSON.parse(storedValue);
+    return storedValue ? JSON.parse(storedValue) : [];
   });
 
   const addWeatherToTheList = () => {
-    if (
-      list &&
-      list.map((l) => l.data.location.name).includes(data.location.name)
-    ) {
+    if (list?.map((l) => l.data.location.name).includes(data.location.name)) {
       return;
     } else {
-      setList([...list, { data, id: uuidv4() }]);
+      setList((currList) => [...currList, { data, id: uuidv4() }]);
     }
   };
 
