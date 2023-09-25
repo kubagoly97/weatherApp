@@ -4,13 +4,11 @@ import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 export default function WeatherHoursCarousel({ data }) {
-  const time = Number(new Date().toString().slice(16, 18));
   const [value, setValue] = React.useState(0);
-
+  const time = Number(data.current.last_updated.slice(10, 13));
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <Box
       className="Hours"
@@ -34,6 +32,7 @@ export default function WeatherHoursCarousel({ data }) {
       >
         {data.forecast.forecastday[0].hour.slice(time).map((h, i) => (
           <Tab
+            key={i}
             label={
               <>
                 <p

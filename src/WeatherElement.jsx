@@ -31,15 +31,6 @@ export function WeatherElement({ index, data, setList, list, id }) {
         }`}
       >
         <button
-          onClick={() => {
-            setShowMore(!showMore);
-            setShowMoreDays(false);
-            setShowMoreHours(false);
-          }}
-        >
-          Show details
-        </button>
-        <button
           style={removeButtonStyle}
           className="Button"
           onClick={() => {
@@ -48,7 +39,14 @@ export function WeatherElement({ index, data, setList, list, id }) {
         >
           ❌
         </button>
-        <div className="WhiteBox">
+        <div
+          className="WhiteBox"
+          onClick={() => {
+            setShowMore(!showMore);
+            setShowMoreDays(false);
+            setShowMoreHours(false);
+          }}
+        >
           <p className="City WeatherElementTitle">
             {" "}
             {data.location.name} {data.current.temp_c} &#8451;{" "}
