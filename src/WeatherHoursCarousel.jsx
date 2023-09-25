@@ -59,36 +59,6 @@ export default function WeatherHoursCarousel({ data }) {
               </>
             }
           />
-          //   <Tab
-          //     style={{ color: "white", fontSize: "20px" }}
-          //     key={i}
-          //     label={
-          //       Number(h.time.slice(10, 13)) === time
-          //         ? `Now  ${h.temp_c}
-          //         ${
-          //           (h.condition.text === "Sunny" && "☀️") ||
-          //           (h.condition.text === "Cloudy" && `⛅️`) ||
-          //           (h.condition.text === "Clear" && `🌙`) ||
-          //           (h.condition.text === "Fog" && `🌫️`) ||
-          //           (h.condition.text === "Light rain" && "🌧️") ||
-          //           (h.condition.text === "Partly cloudy" && "🌤️") ||
-          //           (h.condition.text === "Mist" && "🌫️") ||
-          //           (h.condition.text === "Overcast" && "☁️")
-          //         }`
-          //         : `${h.time.slice(10, 13)}:00
-          //   ${h.temp_c}
-          //   ${
-          //     (h.condition.text === "Sunny" && "☀️") ||
-          //     (h.condition.text === "Cloudy" && `⛅️`) ||
-          //     (h.condition.text === "Clear" && `🌙`) ||
-          //     (h.condition.text === "Fog" && `🌫️`) ||
-          //     (h.condition.text === "Light rain" && "🌧️") ||
-          //     (h.condition.text === "Partly cloudy" && "🌤️") ||
-          //     (h.condition.text === "Mist" && "🌫️") ||
-          //     (h.condition.text === "Overcast" && "☁️")
-          //   }`
-          //     }
-          //   />
         ))}
       </Tabs>
     </Box>

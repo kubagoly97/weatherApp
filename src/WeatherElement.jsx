@@ -52,7 +52,6 @@ export function WeatherElement({ index, data, setList, list, id }) {
           <p className="City WeatherElementTitle">
             {" "}
             {data.location.name} {data.current.temp_c} &#8451;{" "}
-            {/* <img src={data.current.condition.icon} alt="" /> */}
             {(data.current.condition.text === "Sunny" && "☀️") ||
               (data.current.condition.text === "Cloudy" && `⛅️`) ||
               (data.current.condition.text === "Clear" && `🌙`) ||
