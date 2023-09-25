@@ -28,9 +28,9 @@ export function WeatherList({ data, setData }) {
     list.map(async (w) => {
       if (id === w.id) {
         const res = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=${
+          `http://api.weatherapi.com/v1/forecast.json?key=${
             import.meta.env.VITE_API_KEY
-          }&q=${w.data.location.name}&aqi=no`
+          }&q=${w.data.location.name}&days=5&aqi=no&alerts=no`
         );
         const resJSON = await res.json();
         console.log(resJSON);
@@ -39,7 +39,9 @@ export function WeatherList({ data, setData }) {
   };
 
   const handleRefreshData = (newData) => {
-    console.log(list, newData);
+    list.map((w) => {
+      console.log(w, newData);
+    });
   };
 
   return (

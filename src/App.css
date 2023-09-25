@@ -12,7 +12,6 @@ html {
   transition: 0.3s;
   box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.201);
   margin-top: 100px;
-  border: 0.5px solid rgb(164, 164, 164);
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: rgba(0, 60, 255, 0.193);
@@ -72,7 +71,7 @@ html {
 }
 .ErrorBox {
   border: 1px solid red;
-  background-color: rgba(229, 144, 144, 0.354);
+  background-color: rgba(229, 125, 125, 0.354);
   margin-top: 15px;
   width: auto;
   height: auto;
@@ -92,6 +91,7 @@ html {
   padding-bottom: 30px;
   background-color: rgb(82, 82, 82);
   border-radius: 30px;
+  width: 520px;
 }
 .WeatherElement:hover {
   transition: 0.3s;
@@ -108,7 +108,7 @@ html {
   width: 85%;
 }
 .Description {
-  color: rgb(0, 30, 255);
+  color: rgb(255, 255, 255);
   font-size: 20px;
 }
 .Navbar {
@@ -131,4 +131,14 @@ html {
   padding-top: 10px;
   padding-bottom: 10px;
   background: rgba(255, 255, 255, 0.193);
+}
+.Hours {
+  transition: 0.3s;
+  box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.201);
+  margin-top: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 5px;
+  width: 520px;
+  justify-content: center;
 }

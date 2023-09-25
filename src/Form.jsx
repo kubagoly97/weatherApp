@@ -8,9 +8,9 @@ export function Form({ data, setData }) {
     <>
       <form
         onSubmit={handleSubmit(async (data) => {
-          const url = `http://api.weatherapi.com/v1/current.json?key=${
+          const url = `http://api.weatherapi.com/v1/forecast.json?key=${
             import.meta.env.VITE_API_KEY
-          }&q=${data.city}&aqi=no`;
+          }&q=${data.city}&days=5&aqi=no&alerts=no`;
           try {
             const jsonResponse = await axios.get(url);
             setData(jsonResponse.data);
