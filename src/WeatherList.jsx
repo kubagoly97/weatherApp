@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { WeatherElement } from "./WeatherElement";
 import { Button } from "./Button";
+import axios from "axios";
 
 export function WeatherList({ data, setData }) {
   const [list, setList] = useState(function () {
@@ -24,29 +25,32 @@ export function WeatherList({ data, setData }) {
     [list]
   );
 
-  const fetchNewData = (id) => {
-    list.map(async (w) => {
-      if (id === w.id) {
-        const res = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=${
-            import.meta.env.VITE_API_KEY
-          }&q=${w.data.location.name}&days=5&aqi=no&alerts=no`
-        );
-        const resJSON = await res.json();
-        console.log(resJSON);
-      }
-    });
-  };
+  // async function fetchNewData(id) {
+  //   async function newDataFetch(id) {
+  //     list.map(async (w) => {
+  //       if (id === w.id) {
+  //         const resJSON = await axios.get(
+  //           `http://api.weatherapi.com/v1/forecast.json?key=${
+  //             import.meta.env.VITE_API_KEY
+  //           }&q=${w.data.location.name}&days=5&aqi=no&alerts=no`
+  //         );
+  //         const newData = resJSON.data;
+  //         console.log(newData);
+  //         return newData;
+  //       }
+  //     });
+  //   }
+  //   newDataFetch(id);
+  // }
 
-  const handleRefreshData = (newData) => {
-    list.map((w) => {
-      console.log(w, newData);
-    });
-  };
+  // const handleRefreshData = (newData) => {
+  //   list.map((w) => {
+  //     console.log(w, newData);
+  //   });
+  // };
 
   return (
     <>
-      {" "}
       <Button
         func={addWeatherToTheList}
         text="+"
@@ -63,19 +67,18 @@ export function WeatherList({ data, setData }) {
       />
       <div className={`WeatherList `}>
         <ul>
-          {list &&
-            list.map((w, i) => (
-              <WeatherElement
-                key={i}
-                index={i}
-                id={w.id}
-                data={w.data}
-                setList={setList}
-                list={list}
-                handleRefreshData={handleRefreshData}
-                fetchNewData={fetchNewData}
-              />
-            ))}
+          {list.map((w, i) => (
+            <WeatherElement
+              key={i}
+              index={i}
+              id={w.id}
+              data={w.data}
+              setList={setList}
+              list={list}
+              handleRefreshData={handleRefreshData}
+              fetchNewData={fetchNewData}
+            />
+          ))}
         </ul>
       </div>
     </>

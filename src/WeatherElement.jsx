@@ -1,10 +1,18 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { FiveFollowingDaysWeather } from "./FiveFollowingDaysWeather";
 import WeatherHoursCarousel from "./WeatherHoursCarousel";
-export function WeatherElement({ index, data, setList, list, id }) {
+export function WeatherElement({
+  index,
+  data,
+  setList,
+  list,
+  id,
+  fetchNewData,
+}) {
   const [showMore, setShowMore] = useState(false);
   const [showMoreDays, setShowMoreDays] = useState(false);
   const [showMoreHours, setShowMoreHours] = useState(false);
+
   const removeButtonStyle = {
     backgroundColor: "rgba(255, 0, 0, 0.382)",
     padding: "9px",
@@ -67,7 +75,7 @@ export function WeatherElement({ index, data, setList, list, id }) {
               💦 Humidity: {data.current.humidity} %
             </p>
             <p className="Description">
-              ✕ Pressure: {data.current.pressure_mb} mb
+              ↓ Pressure: {data.current.pressure_mb} mb
             </p>
             <WeatherHoursCarousel data={data} />
           </div>
